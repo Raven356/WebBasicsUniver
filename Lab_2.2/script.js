@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (this.textContent === '7') {
                     isDoubleClick = true;
                     const rowIndex = this.parentElement.rowIndex;
-                    const cellIndex = this.cellIndex;
 
                     for (let i = rowIndex; i < numRows; i += 2) {
                         for (let j = 0; j < numCols; j++) {

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Інформація про користувачів</title>
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="elements">
+      <label for="userCount">Введіть кількість користувачів: </label>
+      <input type="number" id="userCount" min="1">
+      <button onclick="calculate()">Згенерувати</button>
+    </div>
+    <div id="userList" class="user-list"></div>
+  </div>
+  <script src="./scripts/script.js"></script>
+</body>
+</html>
