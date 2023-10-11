@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 4</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  </head>
+  <body>
+    <div class="bottom-bar">
+      <input id="nameInput" autocomplete="off" placeholder="Your Name" />
+      <input id="messageInput" autocomplete="off" placeholder="Enter your message..."/>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <ul id="messages"></ul>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      var userColor = getRandomColor();
+      console.log(userColor);
+
+      function sendMessage() {
+        var name = document.getElementById('nameInput').value;
+        console.log(document.getElementById('nameInput'));
+        console.log(document.getElementById('nameInput').value);
+        var message = document.getElementById('messageInput').value;
+        if(name === "" || message === ""){
+          alert("Please enter all of the fields!")
+          return;
+        }
+        socket.emit('chat message', { name: name, message: message, color: userColor });
+        document.getElementById('messageInput').value = '';
+        return false;
+      }
+
+      socket.on('chat message', function(data) {
+        var ul = document.getElementById('messages');
+        var li = document.createElement('li');
+        li.className = 'message';
+        console.log(data.color);
+        console.log(data);
+        li.style.color = data.color;
+        li.style.listStyleType = 'none';
+        li.style.marginLeft = 5;
+        console.log(data.name);
+        li.appendChild(document.createTextNode(data.name + ': ' + data.message));
+        ul.appendChild(li);
+      });
+    </script>
+  </body>
+</html>

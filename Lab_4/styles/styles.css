@@ -1,0 +1,66 @@
+.message { 
+    margin-bottom: 5px; 
+    padding: 5px; 
+    border-radius: 5px; 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255, 0.8);
+  }
+  
+  body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url("https://img.freepik.com/free-vector/color-seamless-space-pattern_102902-2360.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1696896000&semt=ais");
+
+    background-color: #f8f8f8; /* Light gray background */
+    font-family: Arial, sans-serif; /* Use a common font */
+  }
+  
+  .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+    background-color: hsla(177, 40%, 68%, 0.803); /* Green background for the bottom bar */
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    height: 5%;
+  }
+  
+  #nameInput, #messageInput {
+    flex-grow: 1;
+    margin-right: 10px;
+    height: 25px;
+    border-radius: 3px; /* Rounded corners for the input fields */
+    border: none;
+    padding: 5px;
+  }
+  
+  #messageInput{
+    width: 60%;
+  }
+  
+  ul {
+    margin-bottom: 60px;
+  }
+  
+  button {
+    margin-right: 20px;
+    width: 15%;
+    height: 35px;
+    background-color: #2196F3; /* Blue background for the Send button */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 3px; /* Rounded corners for the button */
+  }
+  
+  button:hover {
+    background-color: #0b7dda; /* Darker blue on hover */
+    cursor: pointer;
+  }
+
+  #messages{
+    padding: 10px;
+  }
+  
